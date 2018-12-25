@@ -1,0 +1,11 @@
+<div class="container">
+    <h1><%= @post.title %></h1><hr />
+    <div style="text-align:right;">
+        <div><%= @post.created_at.to_s.split("+").first %>, <%= time_ago_in_words(@post.created_at) %> ago</div>
+        
+        <a href="/post/edit/<%= @post.id %>"><span class="badge badge-pill badge-secondary">수정</span></a>
+        <a href="/post/destroy/<%= @post.id %>"><span class="badge badge-pill badge-info">삭제</span></a>
+    </div>
+    
+    <p><%= simple_format(@post.content) %></p>
+</div>
